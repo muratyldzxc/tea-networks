@@ -48,25 +48,30 @@ public class WeatherInfoCriteriaRepository {
     private Predicate getPredicate(WeatherInfoFilter filters,
                                    Root<WeatherInfo> weatherInfoRoot) {
         List<Predicate> predicates = new ArrayList<>();
-
+        // filter by location
         if(Objects.nonNull(filters.getLocation())){
             predicates.add(
                     criteriaBuilder.equal(weatherInfoRoot.get("location"), filters.getLocation() )
             );
         }
-
+        // filter by condition
         if(Objects.nonNull(filters.getCondition())){
             predicates.add(
                     criteriaBuilder.equal(weatherInfoRoot.get("conditionOfWeather"), filters.getCondition())
             );
         }
-
-        if(Objects.nonNull(filters.getStartDate()) && Objects.nonNull(filters.getEndDate())){
+        // filter by timestamp
+        if(Objects.nonNull(filters.getStartDate())){
             predicates.add(
-                    criteriaBuilder.between(weatherInfoRoot.get("timestampOfWeather"), filters.getStartDate(), filters.getEndDate())
+                    criteriaBuilder.greaterThanOrEqualTo(weatherInfoRoot.get("timestampOfWeather"), filters.getStartDate())
             );
         }
-
+        if(Objects.nonNull(filters.getEndDate())){
+            predicates.add(
+                    criteriaBuilder.lessThanOrEqualTo(weatherInfoRoot.get("timestampOfWeather"), filters.getEndDate())
+            );
+        }
+        // filter by temperature
         if(Objects.nonNull(filters.getTemperature())){
             predicates.add(
                     criteriaBuilder.equal(weatherInfoRoot.get("temperature"), filters.getTemperature())
