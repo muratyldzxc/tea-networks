@@ -26,4 +26,24 @@ public class RoleService implements IRoleService {
     public Role findByName(ERole name) {
         return roleRepository.findByName(name).orElseThrow(() -> new RuntimeException("Error: Role is not found."));
     }
+
+    @Override
+    public Role add(Role entity) {
+        return roleRepository.save(entity);
+    }
+
+    @Override
+    public Role findById(Long id) {
+        return roleRepository.findById(id).orElseThrow();
+    }
+
+    @Override
+    public Role update(Role entity) {
+        return roleRepository.save(entity);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        roleRepository.deleteById(id);
+    }
 }

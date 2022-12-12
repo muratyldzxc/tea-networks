@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "ec96d0c2-c29b-4f11-888a-0492e6c459e7",
+		"name": "Tea Networks Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18533628"
+	},
+	"item": [
+		{
+			"name": "Login with normal user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"user1\",\r\n    \"password\"  :   \"passworduser1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with admin user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"admin1\",\r\n    \"password\"  :   \"passwordadmin1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding normal user with user token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY3MDY4ODI0OCwiZXhwIjoxNjcwNzc0NjQ4fQ.iDL0aA-318I2yvXKVQgDUcVeNdZDtWmHfoDpyOeEI25VHuSSEfWtSvJQgC7cgUcHBATEoyDDasieRLrKbY7O3A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"user1\",\r\n    \"password\"  :   \"passworduser1\",\r\n    \"name\"      :   \"user1\",\r\n    \"email\"     :   \"user1@gmail.com\",\r\n    \"role\"      :   [\"ROLE_USER\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding normal user with admin token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"user1\",\r\n    \"password\"  :   \"passworduser1\",\r\n    \"name\"      :   \"user1\",\r\n    \"email\"     :   \"user1@gmail.com\",\r\n    \"role\"      :   [\"ROLE_USER\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding admin user with user token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"admin1\",\r\n    \"password\"  :   \"passwordadmin1\",\r\n    \"name\"      :   \"admin1\",\r\n    \"email\"     :   \"admin1@gmail.com\",\r\n    \"role\"      :   [\"ROLE_ADMIN\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding admin user with admin token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA2ODgyMjUsImV4cCI6MTY3MDc3NDYyNX0.cSr2j9T4RdEFkktUVVYKpOFpVyH7DS4kfN5ZOTuGuTwZPROOaFguGFysESbiujH9K_1LZEG4xsm_b3JuhBGYCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"user1\",\r\n    \"password\"  :   \"passworduser1\",\r\n    \"name\"      :   \"user1\",\r\n    \"email\"     :   \"user1@gmail.com\",\r\n    \"role\"      :   [\"ROLE_USER\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user info without token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"user1\",\r\n    \"password\"  :   \"passworduser1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/822e86be-5063-403f-9459-3249f6db676a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"822e86be-5063-403f-9459-3249f6db676a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user info with user token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY3MDY4ODI0OCwiZXhwIjoxNjcwNzc0NjQ4fQ.iDL0aA-318I2yvXKVQgDUcVeNdZDtWmHfoDpyOeEI25VHuSSEfWtSvJQgC7cgUcHBATEoyDDasieRLrKbY7O3A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"user1\",\r\n    \"password\"  :   \"passworduser1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/822e86be-5063-403f-9459-3249f6db676a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"822e86be-5063-403f-9459-3249f6db676a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user info with admin token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA2ODgyMjUsImV4cCI6MTY3MDc3NDYyNX0.cSr2j9T4RdEFkktUVVYKpOFpVyH7DS4kfN5ZOTuGuTwZPROOaFguGFysESbiujH9K_1LZEG4xsm_b3JuhBGYCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\"  :   \"user1\",\r\n    \"password\"  :   \"passworduser1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/822e86be-5063-403f-9459-3249f6db676a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"822e86be-5063-403f-9459-3249f6db676a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user info with user token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY3MDY4ODI0OCwiZXhwIjoxNjcwNzc0NjQ4fQ.iDL0aA-318I2yvXKVQgDUcVeNdZDtWmHfoDpyOeEI25VHuSSEfWtSvJQgC7cgUcHBATEoyDDasieRLrKbY7O3A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user1\",\r\n    \"name\": \"userupdate2\",\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"passworduser1\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"ROLE_USER\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/822e86be-5063-403f-9459-3249f6db676a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"822e86be-5063-403f-9459-3249f6db676a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user info with admin token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA2ODgyMjUsImV4cCI6MTY3MDc3NDYyNX0.cSr2j9T4RdEFkktUVVYKpOFpVyH7DS4kfN5ZOTuGuTwZPROOaFguGFysESbiujH9K_1LZEG4xsm_b3JuhBGYCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user1\",\r\n    \"name\": \"userupdate1\",\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"passworduser1\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"ROLE_USER\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/822e86be-5063-403f-9459-3249f6db676a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"822e86be-5063-403f-9459-3249f6db676a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user with user token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY3MDY4ODI0OCwiZXhwIjoxNjcwNzc0NjQ4fQ.iDL0aA-318I2yvXKVQgDUcVeNdZDtWmHfoDpyOeEI25VHuSSEfWtSvJQgC7cgUcHBATEoyDDasieRLrKbY7O3A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/ebf33622-803a-464c-bac3-bca473fa8135",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"ebf33622-803a-464c-bac3-bca473fa8135"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user with admin token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA2ODgyMjUsImV4cCI6MTY3MDc3NDYyNX0.cSr2j9T4RdEFkktUVVYKpOFpVyH7DS4kfN5ZOTuGuTwZPROOaFguGFysESbiujH9K_1LZEG4xsm_b3JuhBGYCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/822e86be-5063-403f-9459-3249f6db676a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"822e86be-5063-403f-9459-3249f6db676a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get weather info with all given parameters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA3ODQyODgsImV4cCI6MTY3MDg3MDY4OH0.8xGvoYKN4Ykp5RMSCGag0iTAn-4ODWvdpnKPlAkmBs3j1u-GD4EzUqcHd2M9s9eRsZOToda7_huOPb86lmjDXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/weather?page=0&size=100&startDate=2022-12-10T00:00:00.000Z&endDate=2022-12-11T00:00:00.000Z&location=istanbul&condition=sunny&temperature=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "100"
+						},
+						{
+							"key": "startDate",
+							"value": "2022-12-10T00:00:00.000Z"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-12-11T00:00:00.000Z"
+						},
+						{
+							"key": "location",
+							"value": "istanbul"
+						},
+						{
+							"key": "condition",
+							"value": "sunny"
+						},
+						{
+							"key": "temperature",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding weather info with admin token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA3ODQyODgsImV4cCI6MTY3MDg3MDY4OH0.8xGvoYKN4Ykp5RMSCGag0iTAn-4ODWvdpnKPlAkmBs3j1u-GD4EzUqcHd2M9s9eRsZOToda7_huOPb86lmjDXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": \"istanbul\",\r\n    \"conditionOfWeather\": \"sunny\",\r\n    \"timestampOfWeather\": \"2022-12-10T01:00:00.000+00:00\",\r\n    \"temperature\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/weather",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete weather info with admin token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA3ODQyODgsImV4cCI6MTY3MDg3MDY4OH0.8xGvoYKN4Ykp5RMSCGag0iTAn-4ODWvdpnKPlAkmBs3j1u-GD4EzUqcHd2M9s9eRsZOToda7_huOPb86lmjDXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/weather/24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get weather info by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA3ODQyODgsImV4cCI6MTY3MDg3MDY4OH0.8xGvoYKN4Ykp5RMSCGag0iTAn-4ODWvdpnKPlAkmBs3j1u-GD4EzUqcHd2M9s9eRsZOToda7_huOPb86lmjDXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/weather/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update weather data with admin token by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2NzA3ODQyODgsImV4cCI6MTY3MDg3MDY4OH0.8xGvoYKN4Ykp5RMSCGag0iTAn-4ODWvdpnKPlAkmBs3j1u-GD4EzUqcHd2M9s9eRsZOToda7_huOPb86lmjDXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": \"erzurum\",\r\n    \"conditionOfWeather\": \"snowy\",\r\n    \"timestampOfWeather\": \"2022-12-10T00:00:00.000+00:00\",\r\n    \"temperature\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/weather/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"22"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
