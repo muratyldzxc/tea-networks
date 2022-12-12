@@ -1,4 +1,4 @@
-# tea-networks
+# Tea Networks
 
 Uygulamayı RESTAPI ve MySQL olmak üzere docker-compose up komutu ile ayağa kaldırabilirsiniz.
 Tek yapmanız gereken projenin olduğu klasöre gelip terminale docker-compose up yazmanız.
